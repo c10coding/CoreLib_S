@@ -1,4 +1,4 @@
-package net.dohaw.play.utilityapi;
+package net.dohaw.play.corelib_s;
 
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.hocon.HoconConfigurationLoader;

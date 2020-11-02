@@ -1,8 +1,8 @@
-package net.dohaw.play.utilityapi.helpers;
+package net.dohaw.play.corelib_s.helpers;
 
 public class NumbersHelper {
 
-    public int getRandomInteger(int maximum, int minimum){
+    public static int getRandomInteger(int maximum, int minimum){
         return ((int) (Math.random()*(maximum - minimum))) + minimum;
     }
 

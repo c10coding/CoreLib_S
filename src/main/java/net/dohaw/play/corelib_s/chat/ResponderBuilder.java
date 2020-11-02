@@ -1,4 +1,4 @@
-package net.dohaw.play.utilityapi.chat;
+package net.dohaw.play.corelib_s.chat;
 
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.text.Text;
