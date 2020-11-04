@@ -4,7 +4,6 @@ import lombok.Setter;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.asset.Asset;
 import org.spongepowered.api.event.Listener;
-import org.spongepowered.api.plugin.PluginContainer;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +14,13 @@ import java.util.Optional;
 public class SPUtils {
 
     @Setter public static String configFolderName;
+
+    public static void validatePluginFolder(){
+        File folder = new File("config/" + CoreLib_S.getInstance().getId());
+        if(!folder.exists()){
+            folder.mkdirs();
+        }
+    }
 
     public static void validateFiles(String configFolderName, String... files){
         for(String fileName : files){
