@@ -28,12 +28,12 @@ public class SPUtils {
             if(optAsset.isPresent()){
                 try {
                     optAsset.get().copyToFile(path, false, true);
-                    CoreLib_S.getInstance().getLogger().info("Coping asset " + fileName);
+                    CoreLib_S.getInstance().getLogger().info("Copying asset " + fileName);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }else{
-                throw new NullPointerException("Asset " + fileName + " in folder " + configFolderName + " was not found!");
+                throw new NullPointerException("Asset " + fileName + " was not found!");
             }
         }
     }
