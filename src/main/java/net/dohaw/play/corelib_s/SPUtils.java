@@ -3,7 +3,6 @@ package net.dohaw.play.corelib_s;
 import lombok.Setter;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.asset.Asset;
-import org.spongepowered.api.event.Listener;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,9 +28,12 @@ public class SPUtils {
             if(optAsset.isPresent()){
                 try {
                     optAsset.get().copyToFile(path, false, true);
+                    CoreLib_S.getInstance().getLogger().info("Coping asset " + fileName);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }else{
+                throw new NullPointerException("Asset " + fileName + " in folder " + configFolderName + " was not found!");
             }
         }
     }
@@ -45,9 +47,9 @@ public class SPUtils {
         }
     }
 
-    public static void registerListeners(Listener... listeners){
-        for(Listener l : listeners){
-            Sponge.getEventManager().registerListeners(CoreLib_S.getInstance(), l);
+    public static void registerListeners(Object... obj){
+        for(Object o : obj){
+            Sponge.getEventManager().registerListeners(CoreLib_S.getInstance(), o);
         }
     }
 
